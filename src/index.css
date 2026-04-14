@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-cyber-bg: #05070A;
+  --color-cyber-surface: #0F1219;
+  --color-cyber-border: #1E2533;
+  --color-cyber-accent: #00F0FF;
+  --color-cyber-accent-glow: rgba(0, 240, 255, 0.2);
+  --color-text-primary: #E6EDF3;
+  --color-text-secondary: #8B949E;
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-bg text-text-primary font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .cyber-header {
+    @apply h-16 px-8 flex items-center justify-between border-b border-cyber-border bg-cyber-surface/80 backdrop-blur-md;
+  }
+
+  .cyber-sidebar {
+    @apply border-r border-cyber-border bg-cyber-surface;
+  }
+
+  .cyber-nav-item {
+    @apply px-8 py-4 cursor-pointer border-l-4 border-transparent transition-all duration-200 flex flex-col gap-1;
+  }
+
+  .cyber-nav-item-active {
+    @apply bg-cyber-accent/5 border-cyber-accent;
+  }
+
+  .cyber-card {
+    @apply bg-cyber-surface border border-cyber-border rounded-xl p-6 relative;
+  }
+
+  .cyber-card-label {
+    @apply absolute -top-2.5 left-5 bg-cyber-bg px-2.5 font-mono text-[11px] uppercase text-text-secondary;
+  }
+
+  .cyber-badge {
+    @apply bg-cyber-border px-3 py-1.5 rounded text-[11px] font-mono uppercase text-cyber-accent border border-cyber-accent/10;
+  }
+
+  .cyber-status-dot {
+    @apply w-2 h-2 bg-cyber-accent rounded-full inline-block mr-2;
+    box-shadow: 0 0 10px var(--color-cyber-accent);
+  }
+
+  .cyber-outcome-item {
+    @apply relative pl-6 text-sm text-text-secondary mb-3;
+  }
+
+  .cyber-outcome-item::before {
+    content: '>';
+    @apply absolute left-0 text-cyber-accent font-mono;
+  }
+
+  .cyber-code-block {
+    @apply bg-black p-3 rounded-md font-mono text-xs text-[#A0CC7F] mt-2 border border-white/5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-border rounded-full hover:bg-cyber-accent/20 transition-colors;
+}
+
+
