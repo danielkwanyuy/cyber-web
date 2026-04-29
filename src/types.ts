@@ -102,5 +102,43 @@ export const PROJECTS: Project[] = [
       'Incident Response Basics',
       'System Monitoring Automation'
     ]
+  },
+  {
+    id: 'intelligent-security-gateway',
+    title: 'Intelligent Security Gateway',
+    objective: 'Enhance common entry points like inbox and login screens using NLP and classification algorithms to create a proactive defense layer against phishing and brute-force attacks.',
+    techStack: ['Python', 'Scikit-Learn', 'TensorFlow', 'NLP', 'TF-IDF'],
+    steps: [
+      'Data Acquisition: Utilize the Enron Email Dataset for samples and the RockYou dataset for password breach analysis.',
+      'Feature Engineering: Convert email text to numerical data using TF-IDF and extract metadata features like SPF/DKIM status.',
+      'Model Training: Implement Random Forest for email classification and an RNN/LSTM model for assessing password entropy.',
+      'Performance Metrics: Calculate a Confusion Matrix to evaluate False Positives and Negatives during testing.',
+      'Latency Optimization: Test and minimize analysis latency to ensure protection doesn\'t disrupt the user experience.'
+    ],
+    learningOutcomes: [
+      'Natural Language Processing for Security',
+      'Neural Password Guessability Prediction',
+      'Model Evaluation (Precision/Recall)',
+      'Security-Oriented Feature Engineering'
+    ]
+  },
+  {
+    id: 'nn-traffic-monitor',
+    title: 'Neural Network Traffic Monitor',
+    objective: 'Build a network-level intrusion detection system (NIDS) using deep learning to identify malicious patterns like DDoS or lateral movement in high-speed traffic.',
+    techStack: ['Mininet', 'Ryu/ONOS', 'PyTorch', 'Graph Convolutional Networks', 'Scapy'],
+    steps: [
+      'Environment Setup: Emulate a network topology with Mininet and manage flows using a Ryu or ONOS controller.',
+      'Data Preprocessing: Normalize flow features from datasets like UNSW-NB15, including Source/Destination bytes and packet rates.',
+      'Architecture Implementation: Develop a Graph Convolutional Network (GCN) to capture node relationships or an Autoencoder for anomaly detection.',
+      'Performance Analysis: Measure maximum Throughput (PPS) and plot ROC curves to optimize detection thresholds.',
+      'Attack Simulation: Use Metasploit or hping3 to simulate SYN floods and verify the system\'s real-time response.'
+    ],
+    learningOutcomes: [
+      'Software Defined Networking (SDN)',
+      'Deep Learning for Network Intrusion',
+      'Anomaly Detection at Scale',
+      'Stress Testing & Performance Benchmarking'
+    ]
   }
 ];

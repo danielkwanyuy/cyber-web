@@ -104,7 +104,7 @@ export default function App() {
                     <span className="text-cyber-accent">Mastery Curriculum</span>
                   </h2>
                   <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
-                    A high-impact curriculum featuring 5 hands-on projects designed to be completed in 7 days using open-source tools.
+                    A high-impact curriculum featuring 7 hands-on projects designed to be completed in 7 days using open-source tools.
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
                     <button 
